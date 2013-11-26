@@ -145,4 +145,18 @@ describe PivotalTracker::Client do
     end
   end
 
+  describe "#new" do
+    context "token present" do
+      it "should create a client instance with it's token accessable" do
+        client = PivotalTracker::Client.new(token: 'abc') 
+        expect(client.token).to eq('abc')
+      end
+    end
+    context "token not present" do
+      it "will raise an exception" do
+        lambda { PivotalTracker::Client.new }.should raise_error(PivotalTracker::Client::NoToken)
+      end
+    end
+  end
+
 end

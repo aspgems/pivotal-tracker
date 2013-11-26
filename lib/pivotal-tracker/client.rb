@@ -4,6 +4,13 @@ module PivotalTracker
 
     class NoToken < StandardError; end
 
+    attr_reader :token
+
+    def initialize(options={})
+      @token = options[:token]  
+      raise NoToken if @token.to_s.empty?
+    end
+
     class << self
       attr_writer :use_ssl, :token, :tracker_host
 
