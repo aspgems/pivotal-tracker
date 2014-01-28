@@ -5,7 +5,6 @@ group :runtime do
   gem 'nokogiri-happymapper', '>= 0.5.4', :require => 'happymapper'
   gem 'builder'
   gem 'nokogiri', '>= 1.5.5'
-  gem 'crack'
 end
 
 group :test do
@@ -14,4 +13,5 @@ group :test do
   gem 'jeweler'
   gem 'stale_fish', '~> 1.3.2'
   gem 'autotest'
+  gem 'crack'
 end
